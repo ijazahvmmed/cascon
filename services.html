@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services — Cascon</title>
+    <meta name="description" content="What Cascon works on. Functional descriptions of recurring engagement types.">
+    <meta property="og:title" content="Services — Cascon">
+    <meta property="og:description"
+        content="What Cascon works on. Functional descriptions of recurring engagement types.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cascon.systems/services">
+    <link rel="icon" href="https://cascon.systems/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Cascon home">
+                <svg class="logo-svg" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="30" fill="currentColor"
+                        style="font-family: Inter, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em;">CASCON</text>
+                </svg>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/work">Work</a></li>
+                    <li class="active"><a href="/services">Services</a></li>
+                    <li><a href="/clients">Clients</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/cascon">Cascon & Co.</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/contact" class="btn-morph" aria-label="Contact">
+                    <span class="btn-text">Contact</span>
+                    <span class="btn-circle-bg"></span>
+                    <span class="btn-icon">
+                        <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
+                            <path stroke="currentColor" stroke-width="1.2"
+                                d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45" />
+                        </svg>
+                    </span>
+                </a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/work">Work</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/clients">Clients</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/cascon">Cascon & Co.</a></li>
+                <li><a href="/contact" class="mobile-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="main">
+        <!-- ============ PAGE INTRO ============ -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title" data-scroll-reveal>What we work on</h1>
+                <p style="margin-top: var(--spacing-lg); max-width: 640px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;"
+                    data-scroll-reveal>
+                    These are the areas Cascon regularly engages in. Each one describes a type of work and the problem
+                    space it typically connects to. Not a menu — more of a map.
+                </p>
+            </div>
+        </section>
+
+        <!-- Feature Image -->
+        <section class="container" style="padding-bottom: var(--spacing-xl);">
+            <div style="width: 100%; height: 400px; overflow: hidden; border-radius: var(--radius-lg);">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2670&auto=format&fit=crop"
+                    alt="Office Architecture" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+            </div>
+        </section>
+
+        <!-- ============ SERVICES LIST ============ -->
+        <section class="container" style="padding-bottom: var(--spacing-3xl);">
+
+            <!-- Service 1 -->
+            <div id="marketing" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Paid Performance
+                </h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    This usually involves campaign structure, budget allocation, and channel selection across paid
+                    media. Often focused on acquisition cost, return on ad spend, and testing cadence.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div id="design" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Conversion Work
+                </h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    Typically connected to landing pages, checkout flows, and form behavior. The work tends to sit
+                    between analytics and front-end implementation. Often involves A/B testing.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div id="communications" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Lifecycle &
+                    Retention</h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    This usually involves email and messaging flows. Often focused on onboarding sequences,
+                    re-engagement triggers, and reducing churn at specific points in the user journey.
+                </p>
+            </div>
+
+            <!-- Service 4 -->
+            <div id="dev" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Automation</h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    Typically connected to workflow tools, integrations, and internal process design. This work usually
+                    touches ops, marketing, and sometimes product simultaneously.
+                </p>
+            </div>
+
+            <!-- Service 5 -->
+            <div id="branding" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Analytics & Data
+                </h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    Often focused on tracking setup, reporting systems, and measurement clarity. This work is about
+                    making existing data usable, not collecting more of it.
+                </p>
+            </div>
+
+            <!-- Service 6 -->
+            <div id="launches" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Applied AI</h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    This usually involves integrating AI tools into existing workflows. Typically connected to content
+                    generation, data processing, or internal tooling. Practical, not theoretical.
+                </p>
+            </div>
+
+            <!-- Collaboration Models -->
+            <div id="collaboration-models"
+                style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
+                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Collaboration
+                    Models</h2>
+                <p
+                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
+                    We usually work in one of three ways: project-based for defined scopes, retained for ongoing
+                    involvement, or embedded for teams that need someone inside the work daily. The model tends to
+                    follow the problem, not the other way around.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="footer-quip container">
+            <p>They say no one reads the footer. If you're here, you might as well say hi.</p>
+        </div>
+        <div class="footer-main container">
+            <div class="footer-addresses">
+                <div class="footer-address">
+                    <h4>Helsinki</h4>
+                    <p>Antinkatu 1<br>00100 Helsinki</p>
+                    <a href="/contact#helsinki">Contact</a>
+                </div>
+                <div class="footer-address">
+                    <h4>London</h4>
+                    <p>42-46 Princelet Street<br>London, E1 5LP</p>
+                    <a href="/contact#london">Contact</a>
+                </div>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Social ›</h5>
+                    <ul>
+                        <li><a href="https://www.instagram.com/wearecascon" target="_blank" rel="noopener">Instagram</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/company/cascon" target="_blank"
+                                rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <div class="footer-emails">
+                <a href="mailto:holla@cascon.systems">holla@cascon.systems</a>
+                <a href="mailto:work@cascon.systems">work@cascon.systems</a>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy-policy">Privacy policy</a>
+                <a href="#edit-consent">Edit consent</a>
+            </div>
+            <p class="footer-copy">© 2026 Cascon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
