@@ -938,6 +938,7 @@ ol {
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--color-text);
+  overflow: hidden; /* For butter animations */
 }
 
 .hero-image-wrapper {
@@ -1249,6 +1250,8 @@ ol {
   max-width: 800px;
   margin: 0 auto var(--spacing-xl) auto;
   color: var(--color-text);
+  text-align: center;
+  overflow: hidden; /* For smooth butter reveal */
 }
 
 .statement-text strong {

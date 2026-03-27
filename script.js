@@ -113,29 +113,38 @@ function initMobileLogic() {
 }
 
 // ===========================
-// DESKTOP ANIMATIONS
+// DESKTOP ANIMATIONS (Smooth Butter Edition)
 // ===========================
 function initDesktopAnimations() {
   if (typeof gsap === "undefined") return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Scroll Text Reveal
+  // 1. Butter Scroll Text Reveal
   const revealElements = document.querySelectorAll("[data-scroll-reveal]");
   revealElements.forEach((el) => {
     splitTextNodes(el);
     const wordEls = el.querySelectorAll(".word");
+    
+    // Set overflow hidden on container just in case it's not set in CSS
+    el.style.overflow = "hidden";
+
     gsap.fromTo(
       wordEls,
-      { autoAlpha: 0, y: 20 },
+      { 
+        autoAlpha: 0, 
+        yPercent: 100,
+        rotateX: -10 
+      },
       {
         autoAlpha: 1,
-        y: 0,
-        duration: 0.8,
+        yPercent: 0,
+        rotateX: 0,
+        duration: 1.4,
         stagger: 0.04,
-        ease: "power2.out",
+        ease: "expo.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 90%",
           toggleActions: "play none none none"
         }
       }
