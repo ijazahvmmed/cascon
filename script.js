@@ -113,45 +113,41 @@ function initMobileLogic() {
 }
 
 // ===========================
-// DESKTOP ANIMATIONS (Smooth Butter Edition)
+// DESKTOP ANIMATIONS (Smooth Butter Character Edition)
 // ===========================
 function initDesktopAnimations() {
   if (typeof gsap === "undefined") return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Butter Scroll Text Reveal
   const revealElements = document.querySelectorAll("[data-scroll-reveal]");
   revealElements.forEach((el) => {
-    splitTextNodes(el);
-    const wordEls = el.querySelectorAll(".word");
+    splitTextToChars(el);
+    const charEls = el.querySelectorAll(".char");
     
-    // Set overflow hidden on container just in case it's not set in CSS
-    el.style.overflow = "hidden";
-
     gsap.fromTo(
-      wordEls,
+      charEls,
       { 
         autoAlpha: 0, 
-        yPercent: 100,
-        rotateX: -10 
+        filter: "blur(12px)",
+        y: 10, 
       },
       {
         autoAlpha: 1,
-        yPercent: 0,
-        rotateX: 0,
-        duration: 1.4,
-        stagger: 0.04,
-        ease: "expo.out",
+        filter: "blur(0px)",
+        y: 0,
+        duration: 1.2,
+        stagger: 0.02,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 90%",
+          start: "top 95%",
           toggleActions: "play none none none"
         }
       }
     );
   });
 
-  // 2. Testimonial Scroll
+  // Testimonials, Work Cards, etc.
   const testimonialSection = document.querySelector(".testimonials");
   if (testimonialSection) {
     const tl = gsap.timeline({
@@ -168,7 +164,6 @@ function initDesktopAnimations() {
       .from(".testimonial-cta", { y: 10, autoAlpha: 0, duration: 0.6 }, 0.5);
   }
 
-  // 3. Work Grid
   const workCards = document.querySelectorAll(".work-card");
   workCards.forEach((card) => {
     gsap.fromTo(
@@ -189,12 +184,11 @@ function initDesktopAnimations() {
     );
   });
 
-  // 4. Custom Cursor
   initCustomCursor();
 }
 
 // ===========================
-// VANILLA SMOOTH SCROLL (Desktop Only)
+// VANILLA SMOOTH SCROLL
 // ===========================
 function initSmoothScrollDesktop() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -230,26 +224,42 @@ function initSmoothScrollDesktop() {
 // ===========================
 // UTILITIES
 // ===========================
-function splitTextNodes(node) {
+
+/**
+ * Split text content into characters grouped by word to prevent layout breaks.
+ */
+function splitTextToChars(node) {
   if (node.nodeType === 3) {
-    const raw = node.textContent;
-    const trimmed = raw.trim();
-    if (trimmed.length === 0) return;
-    const words = trimmed.split(/\s+/);
+    const text = node.textContent;
+    const parts = text.split(/(\s+)/); // Keep whitespaces
     const fragment = document.createDocumentFragment();
-    words.forEach((word) => {
-      const span = document.createElement("span");
-      span.className = "word";
-      span.style.display = "inline-block";
-      span.style.opacity = "0"; 
-      span.style.visibility = "hidden";
-      span.textContent = word;
-      fragment.appendChild(span);
-      fragment.appendChild(document.createTextNode(" "));
+    
+    parts.forEach((part) => {
+      // If it's pure whitespace, just add it as a text node
+      if (/^\s+$/.test(part)) {
+        fragment.appendChild(document.createTextNode(part));
+      } else {
+        // Wrap word in a span to prevent breaking lines in the middle
+        const wordSpan = document.createElement("span");
+        wordSpan.className = "word-wrapper";
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.whiteSpace = "nowrap"; 
+        
+        for (let char of part) {
+          const charSpan = document.createElement("span");
+          charSpan.className = "char";
+          charSpan.style.display = "inline-block";
+          charSpan.style.opacity = "0";
+          charSpan.style.visibility = "hidden";
+          charSpan.textContent = char;
+          wordSpan.appendChild(charSpan);
+        }
+        fragment.appendChild(wordSpan);
+      }
     });
     node.replaceWith(fragment);
   } else if (node.nodeType === 1) {
-    Array.from(node.childNodes).forEach((child) => splitTextNodes(child));
+    Array.from(node.childNodes).forEach((child) => splitTextToChars(child));
   }
 }
 
