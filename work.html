@@ -1,263 +1,535 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Work — Cascon</title>
+    <meta
+      name="description"
+      content="Case studies and client projects across Shopify, AI media, CRO, and performance marketing."
+    />
+    <meta property="og:title" content="Our Work — Cascon" />
+    <meta
+      property="og:description"
+      content="Case studies and client projects across Shopify, AI media, CRO, and performance marketing."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cascon.systems/work" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Work — Cascon" />
+    <meta
+      name="twitter:description"
+      content="Case studies and client projects across Shopify, AI media, CRO, and performance marketing."
+    />
+    <link rel="canonical" href="https://cascon.systems/work" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Work — Cascon</title>
-    <meta name="description"
-        content="A selection of work Cascon has been involved in across different stages and teams.">
-    <meta property="og:title" content="Work — Cascon">
-    <meta property="og:description"
-        content="A selection of work Cascon has been involved in across different stages and teams.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cascon.systems/work">
-    <link rel="icon" href="https://cascon.systems/favicon.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
+  <body class="work-page" data-page="interior">
+    <!-- Skip to main -->
     <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Page Wide Background Animation -->
+    <div class="work-hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor">View</div>
 
     <!-- ============ HEADER / NAV ============ -->
     <header class="site-header" id="site-header">
-        <div class="header-inner">
-            <a href="/" class="logo" aria-label="Cascon home">
-                <svg class="logo-svg" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="30" fill="currentColor"
-                        style="font-family: Inter, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em;">CASCON</text>
-                </svg>
-            </a>
-            <nav class="main-nav" id="main-nav">
-                <ul class="nav-list">
-                    <li class="active"><a href="/work">Work</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/clients">Clients</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/cascon">Cascon & Co.</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="/contact" class="btn-morph" aria-label="Contact">
-                    <span class="btn-text">Contact</span>
-                    <span class="btn-circle-bg"></span>
-                    <span class="btn-icon">
-                        <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
-                            <path stroke="currentColor" stroke-width="1.2"
-                                d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45" />
-                        </svg>
-                    </span>
-                </a>
-                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+      <div class="header-inner">
+        <a href="/" class="logo" aria-label="Cascon home">
+          <img
+            src="cascon black.png"
+            alt="Cascon"
+            class="logo-img logo-black"
+          />
+          <img
+            src="cascon white.png"
+            alt="Cascon"
+            class="logo-img logo-white"
+          />
+        </a>
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-list">
+            <li class="active"><a href="/work">Work</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/clients">Clients</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/cascon">Cascon & Co.</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener" class="btn-morph" aria-label="Contact">
+            <span class="btn-text">Contact</span>
+            <span class="btn-circle-bg"></span>
+            <span class="btn-icon">
+              <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45"
+                />
+              </svg>
+            </span>
+          </a>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- Mobile Nav Overlay -->
     <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="/work">Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/clients">Clients</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/cascon">Cascon & Co.</a></li>
-                <li><a href="/contact" class="mobile-contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/clients">Clients</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/cascon">Cascon & Co.</a></li>
+          <li><a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener" class="mobile-contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
 
     <main id="main">
-        <!-- ============ PAGE INTRO ============ -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <h1 class="hero-title" data-scroll-reveal>Selected work</h1>
-                <p style="margin-top: var(--spacing-lg); max-width: 600px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;"
-                    data-scroll-reveal>
-                    This is a selection of work we've been involved in across different stages and teams. Each entry
-                    describes the type of engagement and the problem area it touched.
-                </p>
-            </div>
-        </section>
+      <!-- ============ WORK HERO ============ -->
+      <section class="work-hero-section">
+        <div class="container">
+          <h1 class="work-hero-title">
+            <div class="work-title-line"><span>Work work work</span></div>
+            <div class="work-title-line"><span>work work work.</span></div>
+          </h1>
+          <p class="work-hero-subline">
+            These are some of the projects we're most proud of. Each one built
+            around a real problem, a real brand, and a real outcome.
+          </p>
 
-        <!-- ============ WORK GRID ============ -->
-        <section class="cases-grid container" id="cases">
-            <div class="cases-row">
-                <a href="/cases/hayday" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #C5D63D;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/2d4e6b1b3c3e4b5a6c7d8e9f0a1b2c3d4e5f6a7b-1920x1080.jpg"
-                            alt="Growth Work" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Growth Work</h3>
-                        <ul class="case-tags">
-                            <li>Performance</li>
-                            <li>Funnels</li>
-                            <li>Analytics</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Ongoing work across paid channels and conversion tracking. Focused on acquisition cost and
-                            funnel structure.</p>
-                    </div>
-                </a>
-                <a href="/cases/kuvaspace" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #FF5252;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/kuvaspace-preview.jpg"
-                            alt="Ongoing Engagement" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Ongoing Engagement</h3>
-                        <ul class="case-tags">
-                            <li>Testing</li>
-                            <li>Automation</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Retained engagement across multiple quarters. Involved testing cadences and workflow
-                            automation.</p>
-                    </div>
-                </a>
+          <div class="work-filters-wrapper">
+            <div class="work-filters">
+              <button class="work-filter-btn active" data-filter="all">
+                All
+              </button>
+              <button class="work-filter-btn" data-filter="shopify">
+                Shopify
+              </button>
+              <button class="work-filter-btn" data-filter="ai-media">
+                AI Media
+              </button>
+              <button class="work-filter-btn" data-filter="cro">CRO</button>
+              <button
+                class="work-filter-btn"
+                data-filter="performance-marketing"
+              >
+                Performance Marketing
+              </button>
+              <button class="work-filter-btn" data-filter="seo-aeo">
+                SEO & AEO
+              </button>
             </div>
-            <div class="cases-row">
-                <a href="/cases/merge-mansion" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #1a1a2e;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/merge-mansion-preview.jpg"
-                            alt="Performance Iteration" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Performance Iteration</h3>
-                        <ul class="case-tags">
-                            <li>Performance</li>
-                            <li>Funnels</li>
-                            <li>Distribution</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Iterative campaign structure work. Touched distribution channels and mid-funnel
-                            optimization.</p>
-                    </div>
-                </a>
-                <a href="/cases/polestar" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #1a1a1a;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/polestar-preview.jpg"
-                            alt="Market Expansion" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Market Expansion</h3>
-                        <ul class="case-tags">
-                            <li>Distribution</li>
-                            <li>Performance</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Supporting expansion into new markets. Work focused on distribution channels and regional
-                            performance.</p>
-                    </div>
-                </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WORK GRID ============ -->
+      <section class="work-grid-section">
+        <div class="container">
+          <!-- Row 1: 3 Equal width columns -->
+          <div class="work-grid-row equal-3">
+            <!-- Card 1: Vibezon -->
+            <a
+              href="https://www.thevibezon.com/"
+              class="work-card"
+              data-tags="shopify,ai-media,cro"
+              data-cursor="View"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="work-card-image">
+                <img src="vibezon_testi.jpg" alt="Vibezon" loading="lazy" />
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-client">Vibezon</h3>
+                <p class="work-desc">
+                  Full Shopify rebuild and CRO overhaul for a men's fashion
+                  brand.
+                </p>
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">AI MEDIA</span>
+                  <span class="card-tag">CRO</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 2: Rewise -->
+            <a
+              href="https://myrewise.shop/"
+              class="work-card"
+              data-tags="shopify,ai-photography,content,cro"
+              data-cursor="View"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="work-card-image">
+                <img src="rewise_testi.jpg" alt="Rewise" loading="lazy" />
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-client">Rewise</h3>
+                <p class="work-desc">
+                  AI product photography and content library for a wellness
+                  brand.
+                </p>
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">AI PHOTOGRAPHY</span>
+                  <span class="card-tag">CONTENT</span>
+                  <span class="card-tag">CRO</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 3: Reborn Co -->
+            <a
+              href="https://thereborncompany.com/"
+              class="work-card"
+              data-tags="shopify,cro"
+              data-cursor="View"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="work-card-image">
+                <img src="reborn_testi.jpg" alt="Reborn Co" loading="lazy" />
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-client">Reborn Co</h3>
+                <p class="work-desc">
+                  Shopify store build and conversion optimization for a
+                  streetwear label.
+                </p>
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">CRO</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Featured Breakout: Bagus -->
+          <div
+            class="work-breakout"
+            data-tags="shopify,ai-photography,content,seo-aeo"
+          >
+            <div class="work-breakout-content">
+              <h2 class="breakout-client">Bagus</h2>
+              <p class="breakout-desc">
+                We built and optimized the Shopify store for Bagus — a
+                Vietnamese artisan home decor brand — and produced AI
+                photography and SEO content that helped them rank and convert.
+              </p>
+              <div class="breakout-meta">
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">AI PHOTOGRAPHY</span>
+                  <span class="card-tag">CONTENT</span>
+                  <span class="card-tag">SEO & AEO</span>
+                </div>
+              </div>
+              <a href="https://www.bagus.in/" class="breakout-cta" target="_blank" rel="noopener">View project →</a>
             </div>
-            <div class="cases-row">
-                <a href="/cases/rovio" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #e8d5b7;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/rovio-preview.jpg"
-                            alt="Experimentation" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Experimentation</h3>
-                        <ul class="case-tags">
-                            <li>Testing</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Short testing engagement. Focused on structured experimentation across a few variables.</p>
-                    </div>
-                </a>
-                <a href="/cases/klarna" class="case-card" data-cursor="View">
-                    <div class="case-card__image" style="background: #FFB3C6;">
-                        <img src="https://cdn.sanity.io/images/cy870nyb/production/klarna-preview.jpg"
-                            alt="Product Optimization" loading="lazy" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-card__info">
-                        <h3>Product Optimization</h3>
-                        <ul class="case-tags">
-                            <li>Analytics</li>
-                        </ul>
-                        <p style="margin-top: 8px; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-                            Analytics-focused engagement. Involved data layer work and conversion path analysis.</p>
-                    </div>
-                </a>
+            <div class="work-breakout-image">
+              <img src="bagus_testi.jpg" alt="Bagus" loading="lazy" />
             </div>
-        </section>
+          </div>
+
+          <!-- Row 2: 3 Equal width columns -->
+          <div class="work-grid-row equal-3">
+            <!-- Card 4: Car Supply -->
+            <a
+              href="https://mycarsupply.shop/"
+              class="work-card"
+              data-tags="shopify,ai-media,cro,seo-aeo"
+              data-cursor="View"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="work-card-image">
+                <img
+                  src="carsupply_testi.jpg"
+                  alt="Car Supply"
+                  loading="lazy"
+                />
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-client">Car Supply</h3>
+                <p class="work-desc">
+                  Store build, AI media, and SEO for an automotive accessories
+                  brand.
+                </p>
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">AI MEDIA</span>
+                  <span class="card-tag">CRO</span>
+                  <span class="card-tag">SEO & AEO</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 5: Hanbee -->
+            <a
+              href="https://myhanbee.myshopify.com/"
+              class="work-card"
+              data-tags="shopify,ai-photography"
+              data-cursor="View"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="work-card-image">
+                <img src="hanbee_testi.jpg" alt="Hanbee" loading="lazy" />
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-client">Hanbee</h3>
+                <p class="work-desc">
+                  Shopify store build and AI product photography for a kids
+                  fashion brand.
+                </p>
+                <div class="work-tags-wrapper">
+                  <span class="card-tag">SHOPIFY</span>
+                  <span class="card-tag">AI PHOTOGRAPHY</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MORE WORK ============ -->
+      <section class="more-work-section">
+        <div class="container">
+          <div class="more-work-header">
+            <h2>More work examples</h2>
+            <p>Smaller engagements, experiments, and one-off projects.</p>
+          </div>
+          <div class="more-work-grid">
+            <div class="more-work-col">
+              <div class="more-work-item">
+                <h4 class="mw-client">Pinoy Grocers</h4>
+                <p class="mw-desc">
+                  Shopify ecommerce store for a Filipino grocery brand.
+                </p>
+                <span class="mw-tags">SHOPIFY · CRO</span>
+                <span class="mw-country">QATAR</span>
+              </div>
+              <div class="more-work-item">
+                <h4 class="mw-client">Mehndi Online</h4>
+                <p class="mw-desc">
+                  Shopify store build for an Indian mehndi and bridal
+                  accessories brand.
+                </p>
+                <span class="mw-tags">SHOPIFY · CRO</span>
+                <span class="mw-country">INDIA</span>
+              </div>
+            </div>
+            <div class="more-work-col">
+              <div class="more-work-item">
+                <h4 class="mw-client">Jerso</h4>
+                <p class="mw-desc">
+                  Shopify football jersey store targeting Indian football fans.
+                </p>
+                <span class="mw-tags">SHOPIFY · CRO</span>
+                <span class="mw-country">INDIA</span>
+              </div>
+              <div class="more-work-item">
+                <h4 class="mw-client">Clipston Elevators</h4>
+                <p class="mw-desc">
+                  Performance marketing and AI video ad campaign.
+                </p>
+                <span class="mw-tags">META ADS · AI MEDIA</span>
+                <span class="mw-country">UAE</span>
+              </div>
+            </div>
+            <div class="more-work-col">
+              <div class="more-work-item">
+                <h4 class="mw-client">Clipston Engineering</h4>
+                <p class="mw-desc">
+                  Performance marketing for a UAE engineering and construction
+                  brand.
+                </p>
+                <span class="mw-tags">META ADS</span>
+                <span class="mw-country">UAE</span>
+              </div>
+              <div class="more-work-item">
+                <h4 class="mw-client">Benair HVAC</h4>
+                <p class="mw-desc">
+                  Performance marketing and social media for a UAE HVAC brand.
+                </p>
+                <span class="mw-tags">META ADS · CONTENT</span>
+                <span class="mw-country">UAE</span>
+              </div>
+            </div>
+            <div class="more-work-col">
+              <div class="more-work-item">
+                <h4 class="mw-client">Pureline Fiberglass</h4>
+                <p class="mw-desc">
+                  Performance marketing for a UAE fiberglass tank manufacturer.
+                </p>
+                <span class="mw-tags">META ADS</span>
+                <span class="mw-country">UAE</span>
+              </div>
+              <div class="more-work-item">
+                <h4 class="mw-client">Antigravuty</h4>
+                <p class="mw-desc">WhatsApp automation webhook build.</p>
+                <span class="mw-tags">AUTOMATION</span>
+                <span class="mw-country">INDIA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ============ FOOTER ============ -->
-    <footer class="site-footer">
-        <div class="footer-quip container">
-            <p>They say no one reads the footer. If you're here, you might as well say hi.</p>
+    <footer class="site-footer" id="footer">
+      <div class="footer-top container">
+        <div class="footer-locations">
+          <h3>Locations</h3>
+          <div class="footer-address">
+            <h4>COVENTRY</h4>
+            <p>Coventry, West Midlands, CV1, UK</p>
+            <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a>
+          </div>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <div class="footer-address">
+            <h4>KOCHI</h4>
+            <p>Ernakulam, Kochi, Kerala, India</p>
+            <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a>
+          </div>
         </div>
-        <div class="footer-main container">
-            <div class="footer-addresses">
-                <div class="footer-address">
-                    <h4>Helsinki</h4>
-                    <p>Antinkatu 1<br>00100 Helsinki</p>
-                    <a href="/contact#helsinki">Contact</a>
-                </div>
-                <div class="footer-address">
-                    <h4>London</h4>
-                    <p>42-46 Princelet Street<br>London, E1 5LP</p>
-                    <a href="/contact#london">Contact</a>
-                </div>
-            </div>
-            <div class="footer-links-grid">
-                <div class="footer-col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Work</h5>
-                    <ul>
-                        <li><a href="/cases/cherry">Case: Growth Work</a></li>
-                        <li><a href="/cases/rovio">Case: Experimentation</a></li>
-                        <li><a href="/cases/polestar">Case: Market Expansion</a></li>
-                        <li><a href="/work">More work</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Social ›</h5>
-                    <ul>
-                        <li><a href="https://www.instagram.com/wearecascon" target="_blank" rel="noopener">Instagram</a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/company/cascon" target="_blank"
-                                rel="noopener">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Work</h5>
+            <ul>
+              <li><a href="https://www.thevibezon.com/" target="_blank" rel="noopener">Vibezon</a></li>
+              <li><a href="https://myrewise.shop/" target="_blank" rel="noopener">Rewise</a></li>
+              <li><a href="https://www.bagus.in/" target="_blank" rel="noopener">Bagus</a></li>
+              <li><a href="https://mycarsupply.shop/" target="_blank" rel="noopener">Car Supply</a></li>
+              <li><a href="https://thereborncompany.com/" target="_blank" rel="noopener">Reborn Co</a></li>
+              <li><a href="https://myhanbee.myshopify.com/" target="_blank" rel="noopener">Hanbee</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Clients</h5>
+            <ul>
+              <li>
+                <a href="/clients#established-brands">Established brands</a>
+              </li>
+              <li><a href="/clients#growing-brands">Growing brands</a></li>
+              <li><a href="/clients#new-brands">New brands</a></li>
+              <li><a href="/clients">All clients</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+              <li>
+                <a href="/services#collaboration-models"
+                  >Collaboration models</a
+                >
+              </li>
+              <li><a href="/services#shopify">Shopify</a></li>
+              <li><a href="/services#ai-media">AI Media</a></li>
+              <li>
+                <a href="/services#performance-marketing">Performance Marketing</a>
+              </li>
+              <li><a href="/services#automation">Automation</a></li>
+              <li><a href="/services#seo-aeo">SEO & AEO</a></li>
+              <li><a href="/services#content-strategy">Content Strategy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Cascon & Co.</h5>
+            <ul>
+              <li><a href="/cascon">For companies</a></li>
+              <li><a href="/cascon">For freelancers</a></li>
+              <li>
+                <a href="mailto:hello@wecascon.com"
+                  >hello@wecascon.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Social ›</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.instagram.com/wearecascon"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/cascon"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-bottom container">
-            <div class="footer-emails">
-                <a href="mailto:holla@cascon.systems">holla@cascon.systems</a>
-                <a href="mailto:press@cascon.systems">press@cascon.systems</a>
-                <a href="mailto:work@cascon.systems">work@cascon.systems</a>
-            </div>
-            <div class="footer-legal">
-                <a href="/privacy-policy">Privacy policy</a>
-                <a href="#edit-consent">Edit consent</a>
-            </div>
-            <p class="footer-copy">© 2026 Cascon. All rights reserved.</p>
+      </div>
+      <div class="footer-bottom container">
+        <div class="footer-emails">
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
         </div>
+        <div class="footer-legal">
+          <a href="/privacy-policy">Privacy policy</a>
+          <a href="#edit-consent">Edit consent</a>
+        </div>
+        <p class="footer-copy">© 2026 Cascon. All rights reserved.</p>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

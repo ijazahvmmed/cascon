@@ -1,237 +1,646 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Services — Cascon</title>
-    <meta name="description" content="What Cascon works on. Functional descriptions of recurring engagement types.">
-    <meta property="og:title" content="Services — Cascon">
-    <meta property="og:description"
-        content="What Cascon works on. Functional descriptions of recurring engagement types.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cascon.systems/services">
-    <link rel="icon" href="https://cascon.systems/favicon.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <meta
+      name="description"
+      content="Shopify development, AI media production, performance marketing, automation, and SEO."
+    />
+    <meta property="og:title" content="Services — Cascon" />
+    <meta
+      property="og:description"
+      content="Shopify development, AI media production, performance marketing, automation, and SEO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cascon.systems/services" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Services — Cascon" />
+    <meta
+      name="twitter:description"
+      content="Shopify development, AI media production, performance marketing, automation, and SEO."
+    />
+    <link rel="canonical" href="https://cascon.systems/services" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body class="services-page" data-page="interior">
+    <!-- Page Wide Background Animation -->
+    <div class="interior-hero-bg-teal">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- ============ HEADER / NAV ============ -->
     <header class="site-header" id="site-header">
-        <div class="header-inner">
-            <a href="/" class="logo" aria-label="Cascon home">
-                <svg class="logo-svg" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="30" fill="currentColor"
-                        style="font-family: Inter, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em;">CASCON</text>
-                </svg>
-            </a>
-            <nav class="main-nav" id="main-nav">
-                <ul class="nav-list">
-                    <li><a href="/work">Work</a></li>
-                    <li class="active"><a href="/services">Services</a></li>
-                    <li><a href="/clients">Clients</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/cascon">Cascon & Co.</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="/contact" class="btn-morph" aria-label="Contact">
-                    <span class="btn-text">Contact</span>
-                    <span class="btn-circle-bg"></span>
-                    <span class="btn-icon">
-                        <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
-                            <path stroke="currentColor" stroke-width="1.2"
-                                d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45" />
-                        </svg>
-                    </span>
-                </a>
-                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+      <div class="header-inner">
+        <a href="/" class="logo" aria-label="Cascon home">
+          <img
+            src="cascon black.png"
+            alt="Cascon"
+            class="logo-img logo-black"
+          />
+          <img
+            src="cascon white.png"
+            alt="Cascon"
+            class="logo-img logo-white"
+          />
+        </a>
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-list">
+            <li><a href="/work">Work</a></li>
+            <li class="active"><a href="/services">Services</a></li>
+            <li><a href="/clients">Clients</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/cascon">Cascon & Co.</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener" class="btn-morph" aria-label="Contact">
+            <span class="btn-text">Contact</span>
+            <span class="btn-circle-bg"></span>
+            <span class="btn-icon">
+              <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45"
+                />
+              </svg>
+            </span>
+          </a>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- Mobile Nav Overlay -->
     <div class="mobile-nav-overlay" id="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="/work">Work</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/clients">Clients</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/cascon">Cascon & Co.</a></li>
-                <li><a href="/contact" class="mobile-contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/services" class="active">Services</a></li>
+          <li><a href="/clients">Clients</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/cascon">Cascon & Co.</a></li>
+          <li><a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener" class="mobile-contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
 
     <main id="main">
-        <!-- ============ PAGE INTRO ============ -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <h1 class="hero-title" data-scroll-reveal>What we work on</h1>
-                <p style="margin-top: var(--spacing-lg); max-width: 640px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;"
-                    data-scroll-reveal>
-                    These are the areas Cascon regularly engages in. Each one describes a type of work and the problem
-                    space it typically connects to. Not a menu — more of a map.
+      <!-- ============ HERO ============ -->
+      <section class="services-hero">
+        <div class="container--wide">
+          <div class="hero-text-center">
+            <h1 class="services-headline" data-scroll-reveal>
+              We create, build, and grow brands.
+            </h1>
+            <p class="services-subline" data-fade-up>
+              We do this through Shopify development, AI media, and performance
+              systems. Best-in-class at all of them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES LAYOUT ============ -->
+      <section class="services-content-section">
+        <div class="container--wide services-layout-grid">
+          <!-- Sticky Sidebar -->
+          <aside class="services-sidebar">
+            <nav class="sidebar-nav" id="sidebar-nav">
+              <ul>
+                <li class="active">
+                  <a href="#shopify" data-target="shopify"
+                    >Shopify Development & CRO</a
+                  >
+                </li>
+                <li>
+                  <a href="#ai-media" data-target="ai-media"
+                    >AI Media Production</a
+                  >
+                </li>
+                <li>
+                  <a href="#performance-marketing" data-target="performance-marketing"
+                    >Performance Marketing</a
+                  >
+                </li>
+                <li>
+                  <a href="#automation" data-target="automation"
+                    >Automation & Workflows</a
+                  >
+                </li>
+                <li><a href="#seo-aeo" data-target="seo-aeo">SEO & AEO</a></li>
+                <li><a href="#content-strategy" data-target="content-strategy">Content Strategy</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- Service Blocks -->
+          <div class="services-blocks">
+            <!-- Shopify Development -->
+            <article id="shopify" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">Shopify Development & CRO</h2>
+                <p class="service-block__desc">
+                  We build Shopify stores that are engineered to convert. From
+                  OS 2.0 theme builds and Liquid customization to full CRO
+                  audits and UX improvements — every decision is made with
+                  revenue in mind.
                 </p>
-            </div>
-        </section>
 
-        <!-- Feature Image -->
-        <section class="container" style="padding-bottom: var(--spacing-xl);">
-            <div style="width: 100%; height: 400px; overflow: hidden; border-radius: var(--radius-lg);">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2670&auto=format&fit=crop"
-                    alt="Office Architecture" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            </div>
-        </section>
+                <div class="service-block__includes-wrapper">
+                  <span class="includes-label">SERVICES INCLUDED:</span>
+                  <div class="includes-grid">
+                    <ul class="includes-list">
+                      <li>Store builds (OS 2.0)</li>
+                      <li>Theme customization</li>
+                      <li>Liquid development</li>
+                      <li>UX improvements</li>
+                      <li>Checkout optimization</li>
+                    </ul>
+                    <ul class="includes-list">
+                      <li>CRO audits</li>
+                      <li>Landing pages</li>
+                      <li>Speed optimization</li>
+                      <li>App integrations</li>
+                      <li>Analytics setup</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="service_shopify_png_1774522653611.png"
+                  alt="Shopify Development & CRO"
+                  loading="lazy"
+                />
+              </div>
+            </article>
 
-        <!-- ============ SERVICES LIST ============ -->
-        <section class="container" style="padding-bottom: var(--spacing-3xl);">
-
-            <!-- Service 1 -->
-            <div id="marketing" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Paid Performance
-                </h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    This usually involves campaign structure, budget allocation, and channel selection across paid
-                    media. Often focused on acquisition cost, return on ad spend, and testing cadence.
+            <!-- AI Media Production -->
+            <article id="ai-media" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">AI Media Production</h2>
+                <p class="service-block__desc">
+                  We produce product photography, video ads, and creative
+                  content using AI tools at a fraction of traditional production
+                  cost — without compromising on quality.
                 </p>
-            </div>
 
-            <!-- Service 2 -->
-            <div id="design" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Conversion Work
-                </h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    Typically connected to landing pages, checkout flows, and form behavior. The work tends to sit
-                    between analytics and front-end implementation. Often involves A/B testing.
-                </p>
-            </div>
+                <div class="service-block__includes-wrapper">
+                  <span class="includes-label">SERVICES INCLUDED:</span>
+                  <div class="includes-grid">
+                    <ul class="includes-list">
+                      <li>AI product photography</li>
+                      <li>Lifestyle imagery</li>
+                      <li>Creative direction</li>
+                      <li>Prompt engineering</li>
+                      <li>Brand visual systems</li>
+                    </ul>
+                    <ul class="includes-list">
+                      <li>Video ad production</li>
+                      <li>Storyboarding</li>
+                      <li>Kling / Higgsfield</li>
+                      <li>Content batching</li>
+                      <li>Reels & short-form</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="service_aimedia_png_1774522672756.png"
+                  alt="AI Media Production"
+                  loading="lazy"
+                />
+              </div>
+            </article>
 
-            <!-- Service 3 -->
-            <div id="communications" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Lifecycle &
-                    Retention</h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    This usually involves email and messaging flows. Often focused on onboarding sequences,
-                    re-engagement triggers, and reducing churn at specific points in the user journey.
+            <!-- Performance Marketing -->
+            <article id="performance-marketing" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">Performance Marketing</h2>
+                <p class="service-block__desc">
+                  We run Meta Ads strategies built around real data — not
+                  guesswork. From campaign structure to creative testing, we
+                  manage paid growth end-to-end.
                 </p>
-            </div>
 
-            <!-- Service 4 -->
-            <div id="dev" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Automation</h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    Typically connected to workflow tools, integrations, and internal process design. This work usually
-                    touches ops, marketing, and sometimes product simultaneously.
-                </p>
-            </div>
+                <div class="service-block__includes-wrapper">
+                  <span class="includes-label">SERVICES INCLUDED:</span>
+                  <div class="includes-grid">
+                    <ul class="includes-list">
+                      <li>Meta Ads management</li>
+                      <li>Creative strategy</li>
+                      <li>Budget optimization</li>
+                      <li>Audience research</li>
+                    </ul>
+                    <ul class="includes-list">
+                      <li>Campaign structure</li>
+                      <li>A/B testing</li>
+                      <li>Retargeting</li>
+                      <li>Reporting</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="service_marketing_png_1774522693146.png"
+                  alt="Performance Marketing"
+                  loading="lazy"
+                />
+              </div>
+            </article>
 
-            <!-- Service 5 -->
-            <div id="branding" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Analytics & Data
-                </h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    Often focused on tracking setup, reporting systems, and measurement clarity. This work is about
-                    making existing data usable, not collecting more of it.
+            <!-- Automation & Workflows -->
+            <article id="automation" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">Automation & Workflows</h2>
+                <p class="service-block__desc">
+                  We build automations that save time and reduce errors across
+                  your operations — from order flows to client communication.
                 </p>
-            </div>
 
-            <!-- Service 6 -->
-            <div id="launches" style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Applied AI</h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    This usually involves integrating AI tools into existing workflows. Typically connected to content
-                    generation, data processing, or internal tooling. Practical, not theoretical.
-                </p>
-            </div>
+                <div class="service-block__includes-wrapper">
+                  <span class="includes-label">SERVICES INCLUDED:</span>
+                  <div class="includes-grid">
+                    <ul class="includes-list">
+                      <li>Shopify automations</li>
+                      <li>Webhook integrations</li>
+                      <li>API integrations</li>
+                    </ul>
+                    <ul class="includes-list">
+                      <li>WhatsApp workflows</li>
+                      <li>Reporting pipelines</li>
+                      <li>Custom scripts</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="service_automation_png_1774522710540.png"
+                  alt="Automation & Workflows"
+                  loading="lazy"
+                />
+              </div>
+            </article>
 
-            <!-- Collaboration Models -->
-            <div id="collaboration-models"
-                style="padding: var(--spacing-2xl) 0; border-top: 1px solid var(--color-border);">
-                <h2 style="font-size: var(--font-size-h3); font-weight: 400; letter-spacing: -0.01em;">Collaboration
-                    Models</h2>
-                <p
-                    style="margin-top: var(--spacing-md); max-width: 560px; color: var(--color-text-secondary); font-size: var(--font-size-body); line-height: 1.6;">
-                    We usually work in one of three ways: project-based for defined scopes, retained for ongoing
-                    involvement, or embedded for teams that need someone inside the work daily. The model tends to
-                    follow the problem, not the other way around.
+            <!-- SEO & AEO -->
+            <article id="seo-aeo" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">SEO & AEO</h2>
+                <p class="service-block__desc">
+                  We optimize for both search engines and answer engines — so
+                  your brand shows up where decisions are made.
                 </p>
+
+                <div class="service-block__includes-wrapper">
+                  <span class="includes-label">SERVICES INCLUDED:</span>
+                  <div class="includes-grid">
+                    <ul class="includes-list">
+                      <li>On-page SEO</li>
+                      <li>Product SEO</li>
+                      <li>Content strategy</li>
+                    </ul>
+                    <ul class="includes-list">
+                      <li>AEO optimization</li>
+                      <li>Meta descriptions</li>
+                      <li>Schema markup</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="service_seo_png_1774522726582.png"
+                  alt="SEO & AEO"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <!-- Content Strategy -->
+            <article id="content-strategy" class="service-block">
+              <div class="service-block__info">
+                <h2 class="service-block__title">Content Strategy</h2>
+                <p class="service-block__desc">
+                  We build the roadmap for your brand's narrative across all channels. From email flows to social calendars, we ensure every piece of content serves a specific business goal.
+                </p>
+
+                <div class="service-block__includes-wrapper">
+                   <span class="includes-label">SERVICES INCLUDED:</span>
+                   <div class="includes-grid">
+                     <ul class="includes-list">
+                       <li>Editorial calendars</li>
+                       <li>Email marketing strategy</li>
+                       <li>Social media planning</li>
+                     </ul>
+                     <ul class="includes-list">
+                       <li>Brand voice design</li>
+                       <li>Copywriting</li>
+                       <li>Content distribution</li>
+                     </ul>
+                   </div>
+                </div>
+              </div>
+              <div class="service-block__image">
+                <img
+                  src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=80"
+                  alt="Content Strategy"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WAYS WE WORK ============ -->
+      <section class="ways-to-work">
+        <div class="container">
+          <h2 class="ways-headline">
+            Typically, we work in two ways with our clients:
+          </h2>
+          <div class="ways-grid">
+            <div class="way-card">
+              <h3 class="way-title">Retainer</h3>
+              <p class="way-desc">
+                You need an ongoing partner who understands your brand and keeps
+                things moving. We embed into your workflow and handle everything
+                from store updates to monthly content.
+              </p>
+              <div class="way-includes">
+                <span class="includes-label">INCLUDES:</span>
+                <ul class="includes-list-inline">
+                  <li>Monthly store management</li>
+                  <li>Content production</li>
+                  <li>Ads management</li>
+                  <li>Reporting</li>
+                  <li>Priority support</li>
+                </ul>
+              </div>
             </div>
-        </section>
+            <div class="way-card">
+              <h3 class="way-title">Project</h3>
+              <p class="way-desc">
+                You have a specific deliverable. A store build, a video
+                campaign, a CRO audit. We scope it, price it, and deliver it —
+                clean and fast.
+              </p>
+              <div class="way-includes">
+                <span class="includes-label">INCLUDES:</span>
+                <ul class="includes-list-inline">
+                  <li>Fixed scope</li>
+                  <li>Fixed price</li>
+                  <li>Clear timeline</li>
+                  <li>One point of contact</li>
+                  <li>Delivery guaranteed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ COLLABORATION CTA ============ -->
+      <section class="collab-cta" id="collab">
+        <div class="container">
+          <h2>Want to work together?</h2>
+          <p>We can start with a conversation.</p>
+          <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener" class="btn-morph" aria-label="Hire us">
+            <span class="btn-text">Hire us</span>
+            <span class="btn-circle-bg"></span>
+            <span class="btn-icon">
+              <svg width="14" height="10" viewBox="0 0 12 9" fill="none">
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  d="M0 4.45H11M11 4.45L6.926 0.45M11 4.45L6.926 8.45"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- ============ FOOTER ============ -->
-    <footer class="site-footer">
-        <div class="footer-quip container">
-            <p>They say no one reads the footer. If you're here, you might as well say hi.</p>
+    <footer class="site-footer" id="footer">
+      <div class="footer-top container">
+        <div class="footer-locations">
+          <h3>Locations</h3>
+          <div class="footer-address">
+            <h4>COVENTRY</h4>
+            <p>Coventry, West Midlands, CV1, UK</p>
+            <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a>
+          </div>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <div class="footer-address">
+            <h4>KOCHI</h4>
+            <p>Ernakulam, Kochi, Kerala, India</p>
+            <a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a>
+          </div>
         </div>
-        <div class="footer-main container">
-            <div class="footer-addresses">
-                <div class="footer-address">
-                    <h4>Helsinki</h4>
-                    <p>Antinkatu 1<br>00100 Helsinki</p>
-                    <a href="/contact#helsinki">Contact</a>
-                </div>
-                <div class="footer-address">
-                    <h4>London</h4>
-                    <p>42-46 Princelet Street<br>London, E1 5LP</p>
-                    <a href="/contact#london">Contact</a>
-                </div>
-            </div>
-            <div class="footer-links-grid">
-                <div class="footer-col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Social ›</h5>
-                    <ul>
-                        <li><a href="https://www.instagram.com/wearecascon" target="_blank" rel="noopener">Instagram</a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/company/cascon" target="_blank"
-                                rel="noopener">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="https://cal.com/cascon-haw2fz/15min" target="_blank" rel="noopener">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Work</h5>
+            <ul>
+              <li><a href="https://www.thevibezon.com/" target="_blank" rel="noopener">Vibezon</a></li>
+              <li><a href="https://myrewise.shop/" target="_blank" rel="noopener">Rewise</a></li>
+              <li><a href="https://www.bagus.in/" target="_blank" rel="noopener">Bagus</a></li>
+              <li><a href="https://mycarsupply.shop/" target="_blank" rel="noopener">Car Supply</a></li>
+              <li><a href="https://thereborncompany.com/" target="_blank" rel="noopener">Reborn Co</a></li>
+              <li><a href="https://myhanbee.myshopify.com/" target="_blank" rel="noopener">Hanbee</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Clients</h5>
+            <ul>
+              <li>
+                <a href="/clients#established-brands">Established brands</a>
+              </li>
+              <li><a href="/clients#growing-brands">Growing brands</a></li>
+              <li><a href="/clients#new-brands">New brands</a></li>
+              <li><a href="/clients">All clients</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+              <li>
+                <a href="/services#collaboration-models"
+                  >Collaboration models</a
+                >
+              </li>
+              <li><a href="/services#shopify">Shopify</a></li>
+              <li><a href="/services#ai-media">AI Media</a></li>
+              <li>
+                <a href="/services#performance-marketing">Performance Marketing</a>
+              </li>
+              <li><a href="/services#automation">Automation</a></li>
+              <li><a href="/services#seo-aeo">SEO & AEO</a></li>
+              <li><a href="/services#content-strategy">Content Strategy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Cascon & Co.</h5>
+            <ul>
+              <li><a href="/cascon">For companies</a></li>
+              <li><a href="/cascon">For freelancers</a></li>
+              <li>
+                <a href="mailto:hello@wecascon.com"
+                  >hello@wecascon.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Social ›</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.instagram.com/wearecascon"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/cascon"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-bottom container">
-            <div class="footer-emails">
-                <a href="mailto:holla@cascon.systems">holla@cascon.systems</a>
-                <a href="mailto:work@cascon.systems">work@cascon.systems</a>
-            </div>
-            <div class="footer-legal">
-                <a href="/privacy-policy">Privacy policy</a>
-                <a href="#edit-consent">Edit consent</a>
-            </div>
-            <p class="footer-copy">© 2026 Cascon. All rights reserved.</p>
+      </div>
+      <div class="footer-bottom container">
+        <div class="footer-emails">
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
+          <a href="mailto:hello@wecascon.com">hello@wecascon.com</a>
         </div>
+        <div class="footer-legal">
+          <a href="/privacy-policy">Privacy policy</a>
+          <a href="#edit-consent">Edit consent</a>
+        </div>
+        <p class="footer-copy">© 2026 Cascon. All rights reserved.</p>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
-</body>
+    <script>
+      // Specific sidebar logic for services page
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
+        const sections = document.querySelectorAll(".service-block");
 
+        const observerOptions = {
+          root: null,
+          rootMargin: "-20% 0px -70% 0px",
+          threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              sidebarLinks.forEach((link) => {
+                link.parentElement.classList.toggle(
+                  "active",
+                  link.getAttribute("data-target") === id,
+                );
+              });
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => observer.observe(section));
+
+        // GSAP ScrollTrigger for service images (Parallax/Scale)
+        gsap.registerPlugin(ScrollTrigger);
+
+        const serviceImages = document.querySelectorAll(
+          ".service-block__image img",
+        );
+        serviceImages.forEach((img) => {
+          gsap.fromTo(
+            img,
+            {
+              scale: 1.15,
+              y: -30,
+            },
+            {
+              scale: 1,
+              y: 0,
+              scrollTrigger: {
+                trigger: img.parentElement,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        });
+
+        // Smooth appear for service list items
+        const listItems = document.querySelectorAll(".includes-list li");
+        listItems.forEach((li, index) => {
+          gsap.from(li, {
+            scrollTrigger: {
+              trigger: li,
+              start: "top 95%",
+              toggleActions: "play none none none",
+            },
+            opacity: 0,
+            x: -20,
+            duration: 0.8,
+            delay: (index % 5) * 0.1, // Stagger based on column position approx
+            ease: "power2.out",
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
