@@ -1,4 +1,11 @@
 // ===========================
+// GSAP CONFIG & PERFORMANCE
+// ===========================
+if (typeof gsap !== "undefined") {
+  gsap.ticker.lagSmoothing(1000, 16);
+}
+
+// ===========================
 // LENIS SMOOTH SCROLL
 // ===========================
 const lenis = new Lenis({
@@ -174,15 +181,18 @@ function initScrollReveal() {
             gsap.fromTo(
               wordEls,
               {
-                opacity: 0,
+                autoAlpha: 0,
                 y: 20,
+                filter: "blur(8px)",
               },
               {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
+                filter: "blur(0px)",
                 duration: 0.8,
                 stagger: 0.04,
                 ease: "power2.out",
+                force3D: true,
               },
             );
             observer.unobserve(el);
@@ -309,10 +319,11 @@ function showTestiSlide(index, direction = 1) {
 
   // Outgoing Content
   gsap.to(outgoing, {
-    opacity: 0,
+    autoAlpha: 0,
     x: -xMove,
     duration: 0.3,
     ease: "power2.in",
+    force3D: true,
     onComplete: () => {
       outgoing.classList.remove("active");
       incoming.classList.add("active");
@@ -320,8 +331,8 @@ function showTestiSlide(index, direction = 1) {
       // Incoming Content
       gsap.fromTo(
         incoming,
-        { opacity: 0, x: xMove },
-        { opacity: 1, x: 0, duration: 0.4, ease: "power2.out", delay: 0.1 },
+        { autoAlpha: 0, x: xMove },
+        { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out", delay: 0.1, force3D: true },
       );
     },
   });
@@ -361,6 +372,8 @@ function initTestiScroll() {
         trigger: section,
         start: "top 80%",
         once: true,
+        scrub: 1,
+        anticipatePin: 1,
       },
     });
 
@@ -368,9 +381,10 @@ function initTestiScroll() {
       ".testimonial-left",
       {
         x: -30,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 0.8,
         ease: "power2.out",
+        force3D: true,
       },
       0,
     )
@@ -378,9 +392,10 @@ function initTestiScroll() {
         ".testimonial-quote",
         {
           x: 30,
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.8,
           ease: "power2.out",
+          force3D: true,
         },
         0.2,
       )
@@ -388,9 +403,10 @@ function initTestiScroll() {
         ".testimonial-attribution",
         {
           y: 10,
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.6,
           ease: "power2.out",
+          force3D: true,
         },
         0.4,
       )
@@ -398,9 +414,10 @@ function initTestiScroll() {
         ".testimonial-cta",
         {
           y: 10,
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.6,
           ease: "power2.out",
+          force3D: true,
         },
         0.5,
       );
@@ -516,11 +533,12 @@ function initWorkPage() {
     if (lines.length > 0) {
       gsap.to(lines, {
         y: "0%",
-        opacity: 1,
+        autoAlpha: 1,
         duration: 1,
         stagger: 0.1,
         ease: "power3.out",
         delay: 0.2,
+        force3D: true,
       });
     }
 
@@ -529,16 +547,18 @@ function initWorkPage() {
     workCards.forEach((card) => {
       gsap.fromTo(
         card,
-        { y: 30, opacity: 0 },
+        { y: 30, autoAlpha: 0 },
         {
           y: 0,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 0.8,
           ease: "power2.out",
+          force3D: true,
           scrollTrigger: {
             trigger: card,
             start: "top 85%",
             once: true,
+            scrub: 1,
           },
         },
       );
@@ -556,17 +576,18 @@ function initWorkPage() {
             trigger: breakout,
             start: "top 80%",
             once: true,
+            scrub: 1,
           },
         });
 
         tl.fromTo(
           content,
-          { x: -40, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+          { x: -40, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out", force3D: true },
         ).fromTo(
           image,
-          { x: 40, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+          { x: 40, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out", force3D: true },
           "<0.2", // Start slightly after content
         );
       }
@@ -594,7 +615,7 @@ function initWorkPage() {
         if (filterValue === "all" || tagsArray.includes(filterValue)) {
           item.style.display = "";
           // Small fade in effect when shown
-          gsap.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 0.4 });
+          gsap.fromTo(item, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, force3D: true });
         } else {
           item.style.display = "none";
         }
