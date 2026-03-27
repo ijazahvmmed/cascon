@@ -107,7 +107,7 @@ function initMobileLogic() {
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll("[data-scroll-reveal], .fade-up").forEach((el) => {
+  document.querySelectorAll("[data-scroll-reveal], .hero-title, .work-hero-title, .about-hero-title, .services-headline, .cascon-hero-title, .clients-hero-headline, .careers-hero-title, .contact-hero-title").forEach((el) => {
     observer.observe(el);
   });
 }
@@ -116,12 +116,31 @@ function initMobileLogic() {
 // DESKTOP ANIMATIONS (Smooth Butter Character Edition)
 // ===========================
 function initDesktopAnimations() {
-  if (typeof gsap === "undefined") return;
+  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
   gsap.registerPlugin(ScrollTrigger);
 
-  const revealElements = document.querySelectorAll("[data-scroll-reveal]");
+  // Target all hero titles and and elements with reveal attribute
+  const selectors = [
+    "[data-scroll-reveal]",
+    ".hero-title",
+    ".work-hero-title",
+    ".about-hero-title",
+    ".services-headline",
+    ".cascon-hero-title",
+    ".clients-hero-headline",
+    ".careers-hero-title",
+    ".contact-hero-title",
+    ".statement-text"
+  ];
+  
+  const revealElements = document.querySelectorAll(selectors.join(","));
+  
   revealElements.forEach((el) => {
-    splitTextToChars(el);
+    // Only split if not already split
+    if (!el.querySelector(".char")) {
+      splitTextToChars(el);
+    }
+    
     const charEls = el.querySelectorAll(".char");
     
     gsap.fromTo(
@@ -225,26 +244,19 @@ function initSmoothScrollDesktop() {
 // UTILITIES
 // ===========================
 
-/**
- * Split text content into characters grouped by word to prevent layout breaks.
- */
 function splitTextToChars(node) {
   if (node.nodeType === 3) {
     const text = node.textContent;
-    const parts = text.split(/(\s+)/); // Keep whitespaces
+    const parts = text.split(/(\s+)/);
     const fragment = document.createDocumentFragment();
-    
     parts.forEach((part) => {
-      // If it's pure whitespace, just add it as a text node
       if (/^\s+$/.test(part)) {
         fragment.appendChild(document.createTextNode(part));
       } else {
-        // Wrap word in a span to prevent breaking lines in the middle
         const wordSpan = document.createElement("span");
         wordSpan.className = "word-wrapper";
         wordSpan.style.display = "inline-block";
         wordSpan.style.whiteSpace = "nowrap"; 
-        
         for (let char of part) {
           const charSpan = document.createElement("span");
           charSpan.className = "char";
@@ -259,6 +271,7 @@ function splitTextToChars(node) {
     });
     node.replaceWith(fragment);
   } else if (node.nodeType === 1) {
+    if (node.tagName === "BR") return;
     Array.from(node.childNodes).forEach((child) => splitTextToChars(child));
   }
 }
