@@ -139,6 +139,22 @@ html.lenis body {
   initial-value: 70%;
 }
 
+.word,
+.fade-up,
+.case-card,
+.work-card,
+.testimonial-left,
+.testimonial-quote,
+.testimonial-attribution,
+.testimonial-cta,
+.hero-title,
+.hero-cta-pill,
+.pill-btn,
+.service-card,
+.careers-card {
+  will-change: transform, opacity;
+}
+
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
@@ -2121,6 +2137,28 @@ ol {
 
   .custom-cursor {
     display: none !important;
+  }
+
+  /* Strip expensive filters for 60FPS mobile performance */
+  *,
+  *::before,
+  *::after {
+    filter: none !important;
+    backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  /* Ensure backgrounds still look decent without filters */
+  .site-header.scrolled {
+    background: #ffffff !important;
+  }
+  
+  .hero-cta-pill {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .work-hero-bg .blob {
+    opacity: 0.4; /* Soften without blur */
   }
 }
 

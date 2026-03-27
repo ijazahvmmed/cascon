@@ -2,28 +2,30 @@
 // GSAP CONFIG & PERFORMANCE
 // ===========================
 if (typeof gsap !== "undefined") {
-  gsap.ticker.lagSmoothing(1000, 16);
+  // Disable Lag Smoothing to prevent visual stuttering during smooth scrolls
+  gsap.ticker.lagSmoothing(0);
 }
 
 // ===========================
-// LENIS SMOOTH SCROLL
+// LENIS SMOOTH SCROLL (Optimized for Mobile)
 // ===========================
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-  orientation: "vertical",
-  gestureOrientation: "vertical",
   smoothWheel: true,
-  wheelMultiplier: 1,
-  touchMultiplier: 1.5,
-  infinite: false,
+  smoothTouch: false, // Maintain native touch momentum on mobile
+  syncTouch: true,    // Sync touch for better stability
 });
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
+// Bind Lenis scroll events to GSAP
+if (typeof ScrollTrigger !== "undefined") {
+  lenis.on('scroll', ScrollTrigger.update);
 }
-requestAnimationFrame(raf);
+
+// Unified Ticker: Sync Lenis with GSAP's high-performance ticker
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
 
 // ===========================
 // MOBILE MENU TOGGLE
@@ -160,16 +162,13 @@ window.addEventListener(
 updateActiveNav();
 
 // ===========================
-// SCROLL TEXT REVEAL (About Statement)
-// ===========================
-// ===========================
-// GSAP SCROLL TEXT REVEAL
+// GSAP SCROLL TEXT REVEAL (Optimized)
 // ===========================
 function initScrollReveal() {
   const elements = document.querySelectorAll("[data-scroll-reveal]");
 
   elements.forEach((el) => {
-    // Advanced splitting that preserves HTML tags (strong, span, etc.)
+    // Advanced splitting that preserves HTML tags
     splitTextNodes(el);
 
     const wordEls = el.querySelectorAll(".word");
@@ -183,16 +182,14 @@ function initScrollReveal() {
               {
                 autoAlpha: 0,
                 y: 20,
-                filter: "blur(8px)",
               },
               {
                 autoAlpha: 1,
                 y: 0,
-                filter: "blur(0px)",
                 duration: 0.8,
                 stagger: 0.04,
                 ease: "power2.out",
-                force3D: true,
+                force3D: true, // Force GPU
               },
             );
             observer.unobserve(el);
@@ -219,7 +216,6 @@ function splitTextNodes(node) {
     const words = trimmed.split(/\s+/);
     const fragment = document.createDocumentFragment();
 
-    // Re-insert the leading space so the word doesn't merge with the previous element
     if (leadingSpace) {
       fragment.appendChild(document.createTextNode(" "));
     }
@@ -228,33 +224,28 @@ function splitTextNodes(node) {
       const span = document.createElement("span");
       span.className = "word";
       span.style.display = "inline-block";
-      span.style.opacity = "0"; // Initial state for GSAP
+      span.style.opacity = "0"; 
+      span.style.visibility = "hidden";
       span.textContent = word;
       fragment.appendChild(span);
 
-      // Add space between words
       if (index < words.length - 1) {
         fragment.appendChild(document.createTextNode(" "));
       }
     });
 
-    // Re-insert the trailing space so the word doesn't merge with the next element
     if (trailingSpace) {
       fragment.appendChild(document.createTextNode(" "));
     }
 
     node.replaceWith(fragment);
   } else if (node.nodeType === 1) {
-    // Element node
-    // Recursively handle children
-    // Convert childNodes to array to avoid live collection issues during replacement
     Array.from(node.childNodes).forEach((child) => splitTextNodes(child));
   }
 }
 
 // Initialize after DOM is ready
 document.addEventListener("DOMContentLoaded", initScrollReveal);
-// Also call immediately in case of defer
 initScrollReveal();
 
 // ===========================
@@ -267,16 +258,14 @@ let cursorY = 0;
 let targetX = 0;
 let targetY = 0;
 
-// Only enable custom cursor on non-touch devices
+// Disable custom cursor on touch devices to save memory/CPUs
 const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
 if (!isTouch && customCursor) {
-  // Smooth cursor follow using lerp
   function updateCursor() {
     cursorX += (targetX - cursorX) * 0.15;
     cursorY += (targetY - cursorY) * 0.15;
-    customCursor.style.left = cursorX + "px";
-    customCursor.style.top = cursorY + "px";
+    customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`; // Using transform instead of top/left
     requestAnimationFrame(updateCursor);
   }
   updateCursor();
@@ -298,7 +287,7 @@ if (!isTouch && customCursor) {
 }
 
 // ===========================
-// TESTIMONIAL SLIDER (GSAP)
+// TESTIMONIAL SLIDER (GSAP Optimized)
 // ===========================
 const testiImages = document.querySelectorAll(".testimonial-image-track img");
 const testiContents = document.querySelectorAll(".testimonial-slide-content");
@@ -363,7 +352,6 @@ function initTestiScroll() {
   const section = document.querySelector(".testimonials");
   if (!section) return;
 
-  // Ensure ScrollTrigger is registered (standard practice before use)
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -374,6 +362,7 @@ function initTestiScroll() {
         once: true,
         scrub: 1,
         anticipatePin: 1,
+        fastScrollEnd: true,
       },
     });
 
@@ -425,16 +414,12 @@ function initTestiScroll() {
 }
 
 document.addEventListener("DOMContentLoaded", initTestiScroll);
-// Initial call in case DOMContentLoaded already fired
-if (
-  document.readyState === "complete" ||
-  document.readyState === "interactive"
-) {
+if (document.readyState === "complete" || document.readyState === "interactive") {
   initTestiScroll();
 }
 
 // ===========================
-// SCROLL ANIMATIONS (Fade Up)
+// SCROLL ANIMATIONS (Fade Up - Balanced)
 // ===========================
 function addFadeUpElements() {
   const selectors = [
@@ -458,7 +443,6 @@ function addFadeUpElements() {
     ".collab-cta h2",
     ".collab-cta p",
     ".collab-cta .btn-morph",
-    // Services Page Specific
     ".services-headline",
     ".services-subline",
     ".service-block__title",
@@ -471,7 +455,6 @@ function addFadeUpElements() {
   selectors.forEach((sel) => {
     document.querySelectorAll(sel).forEach((el, i) => {
       el.classList.add("fade-up");
-      el.style.transitionDelay = `${i * 0.06}s`;
     });
   });
 }
@@ -500,7 +483,6 @@ initScrollObserver();
 
 // ===========================
 // SMOOTH SCROLL FOR ANCHOR LINKS
-// (Uses Lenis instead of native)
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -511,7 +493,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (target) {
       e.preventDefault();
       lenis.scrollTo(target, {
-        offset: -80, // Account for header height
+        offset: -80,
         duration: 1.2,
       });
     }
@@ -519,10 +501,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // ===========================
-// WORK PAGE LOGIC & ANIMATIONS
+// WORK PAGE LOGIC & ANIMATIONS (Optimized)
 // ===========================
 function initWorkPage() {
-  // Only run if on work page
   if (!document.querySelector(".work-page")) return;
 
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
@@ -559,6 +540,8 @@ function initWorkPage() {
             start: "top 85%",
             once: true,
             scrub: 1,
+            anticipatePin: 1,
+            fastScrollEnd: true,
           },
         },
       );
@@ -577,6 +560,8 @@ function initWorkPage() {
             start: "top 80%",
             once: true,
             scrub: 1,
+            anticipatePin: 1,
+            fastScrollEnd: true,
           },
         });
 
@@ -588,7 +573,7 @@ function initWorkPage() {
           image,
           { x: 40, autoAlpha: 0 },
           { x: 0, autoAlpha: 1, duration: 0.8, ease: "power2.out", force3D: true },
-          "<0.2", // Start slightly after content
+          "<0.2",
         );
       }
     });
@@ -600,7 +585,6 @@ function initWorkPage() {
 
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      // Update active state on buttons
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -614,14 +598,12 @@ function initWorkPage() {
 
         if (filterValue === "all" || tagsArray.includes(filterValue)) {
           item.style.display = "";
-          // Small fade in effect when shown
           gsap.fromTo(item, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, force3D: true });
         } else {
           item.style.display = "none";
         }
       });
 
-      // Re-trigger ScrollTrigger to recalculate positions after layout change
       if (typeof ScrollTrigger !== "undefined") {
         setTimeout(() => {
           ScrollTrigger.refresh();
@@ -632,9 +614,6 @@ function initWorkPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initWorkPage);
-if (
-  document.readyState === "complete" ||
-  document.readyState === "interactive"
-) {
+if (document.readyState === "complete" || document.readyState === "interactive") {
   initWorkPage();
 }
