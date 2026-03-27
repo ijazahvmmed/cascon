@@ -2159,25 +2159,16 @@ ol {
   }
 
   /* Strip expensive filters for 60FPS mobile performance */
-  *,
-  *::before,
-  *::after {
+  *:not(.blob) {
     filter: none !important;
     backdrop-filter: none !important;
     mix-blend-mode: normal !important;
   }
 
-  /* Ensure backgrounds still look decent without filters */
-  .site-header.scrolled {
-    background: #ffffff !important;
-  }
-  
-  .hero-cta-pill {
-    background: rgba(255, 255, 255, 0.9) !important;
-  }
-
+  /* Keep subtle gradient look on work pages mobile */
   .work-hero-bg .blob {
-    opacity: 0.4; /* Soften without blur */
+    filter: blur(40px) !important; /* Softened blur for mobile */
+    opacity: 0.6 !important;
   }
 }
 

@@ -16,7 +16,6 @@ mm.add("(min-width: 800px)", () => {
   initSmoothScrollDesktop();
 
   return () => {
-    // This runs when the media query no longer matches (< 800px)
     // GSAP matchMedia automatically reverts and kills all ScrollTriggers created inside
   };
 });
@@ -26,11 +25,76 @@ mm.add("(max-width: 799px)", () => {
   initMobileLogic();
 });
 
+// Always run page logic (filters, menu)
+initCommonLogic();
+
+// ===========================
+// COMMON LOGIC (Available everywhere)
+// ===========================
+function initCommonLogic() {
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileOverlay = document.getElementById("mobile-nav-overlay");
+  if (menuToggle && mobileOverlay) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", !isOpen);
+      mobileOverlay.classList.toggle("active");
+      document.body.style.overflow = isOpen ? "" : "hidden";
+    });
+    mobileOverlay.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  // Work Page Filters
+  const filterBtns = document.querySelectorAll(".work-filter-btn");
+  const allItems = document.querySelectorAll(".work-card, .work-breakout");
+  if (filterBtns.length > 0) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filterValue = btn.getAttribute("data-filter");
+        allItems.forEach((item) => {
+          const itemTags = item.getAttribute("data-tags");
+          if (!itemTags) return;
+          const tagsArray = itemTags.split(",").map((t) => t.trim());
+          if (filterValue === "all" || tagsArray.includes(filterValue)) {
+            item.style.display = "";
+            gsap.fromTo(item, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, force3D: true });
+          } else {
+            item.style.display = "none";
+          }
+        });
+        if (typeof ScrollTrigger !== "undefined") {
+          setTimeout(() => { ScrollTrigger.refresh(); }, 50);
+        }
+      });
+    });
+  }
+
+  // Header Logic
+  const header = document.getElementById("site-header");
+  let lastS = 0;
+  window.addEventListener("scroll", () => {
+    const currS = window.scrollY;
+    if (currS > lastS && currS > 100) header.classList.add("hidden");
+    else header.classList.remove("hidden");
+    if (currS > 500) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+    lastS = currS;
+  }, { passive: true });
+}
+
 // ===========================
 // MOBILE LOGIC (Lightweight)
 // ===========================
 function initMobileLogic() {
-  // Simple intersection observer for reveals instead of heavy GSAP
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -60,7 +124,6 @@ function initDesktopAnimations() {
   revealElements.forEach((el) => {
     splitTextNodes(el);
     const wordEls = el.querySelectorAll(".word");
-    
     gsap.fromTo(
       wordEls,
       { autoAlpha: 0, y: 20 },
@@ -136,7 +199,6 @@ function initSmoothScrollDesktop() {
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
         let startTime = null;
-
         function animation(currentTime) {
           if (startTime === null) startTime = currentTime;
           const timeElapsed = currentTime - startTime;
@@ -144,14 +206,12 @@ function initSmoothScrollDesktop() {
           window.scrollTo(0, run);
           if (timeElapsed < 1200) requestAnimationFrame(animation);
         }
-
         function ease(t, b, c, d) {
           t /= d / 2;
           if (t < 1) return (c / 2) * t * t + b;
           t--;
           return (-c / 2) * (t * (t - 2) - 1) + b;
         }
-
         requestAnimationFrame(animation);
       }
     });
@@ -159,9 +219,8 @@ function initSmoothScrollDesktop() {
 }
 
 // ===========================
-// MISC UTILITIES
+// UTILITIES
 // ===========================
-
 function splitTextNodes(node) {
   if (node.nodeType === 3) {
     const raw = node.textContent;
@@ -169,7 +228,7 @@ function splitTextNodes(node) {
     if (trimmed.length === 0) return;
     const words = trimmed.split(/\s+/);
     const fragment = document.createDocumentFragment();
-    words.forEach((word, index) => {
+    words.forEach((word) => {
       const span = document.createElement("span");
       span.className = "word";
       span.style.display = "inline-block";
@@ -177,7 +236,7 @@ function splitTextNodes(node) {
       span.style.visibility = "hidden";
       span.textContent = word;
       fragment.appendChild(span);
-      if (index < words.length - 1) fragment.appendChild(document.createTextNode(" "));
+      fragment.appendChild(document.createTextNode(" "));
     });
     node.replaceWith(fragment);
   } else if (node.nodeType === 1) {
@@ -190,12 +249,10 @@ function initCustomCursor() {
   const caseCards = document.querySelectorAll(".case-card[data-cursor]");
   if (!customCursor) return;
   let targetX = 0, targetY = 0, currX = 0, currY = 0;
-
   document.addEventListener("mousemove", (e) => {
     targetX = e.clientX;
     targetY = e.clientY;
   });
-
   function update() {
     currX += (targetX - currX) * 0.15;
     currY += (targetY - currY) * 0.15;
@@ -203,7 +260,6 @@ function initCustomCursor() {
     requestAnimationFrame(update);
   }
   update();
-
   caseCards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
       customCursor.textContent = card.dataset.cursor || "View";
@@ -214,38 +270,3 @@ function initCustomCursor() {
     });
   });
 }
-
-// ===========================
-// MOBILE MENU TOGGLE
-// ===========================
-const menuToggle = document.getElementById("menu-toggle");
-const mobileOverlay = document.getElementById("mobile-nav-overlay");
-if (menuToggle && mobileOverlay) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", !isOpen);
-    mobileOverlay.classList.toggle("active");
-    document.body.style.overflow = isOpen ? "" : "hidden";
-  });
-  mobileOverlay.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menuToggle.setAttribute("aria-expanded", "false");
-      mobileOverlay.classList.remove("active");
-      document.body.style.overflow = "";
-    });
-  });
-}
-
-// ===========================
-// HEADER & NAV LOGIC
-// ===========================
-const header = document.getElementById("site-header");
-let lastS = 0;
-window.addEventListener("scroll", () => {
-  const currS = window.scrollY;
-  if (currS > lastS && currS > 100) header.classList.add("hidden");
-  else header.classList.remove("hidden");
-  if (currS > 500) header.classList.add("scrolled");
-  else header.classList.remove("scrolled");
-  lastS = currS;
-}, { passive: true });
