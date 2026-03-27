@@ -8,7 +8,7 @@ const lenis = new Lenis({
   gestureOrientation: "vertical",
   smoothWheel: true,
   wheelMultiplier: 1,
-  touchMultiplier: 2,
+  touchMultiplier: 1.5,
   infinite: false,
 });
 
@@ -54,17 +54,17 @@ const header = document.getElementById("site-header");
 let lastScrollY = 0;
 let ticking = false;
 
+let threshold = 0;
+let cachedHero = null;
+
 function updateHeader() {
   const scrollY = window.scrollY;
-  const hero = document.getElementById("hero");
-  const servicesHero = document.querySelector(".services-hero");
-
-  // Choose the hero section present on the page
-  const activeHero = hero || servicesHero;
-  let threshold = 50;
-
-  if (activeHero) {
-    threshold = activeHero.offsetHeight - 80;
+  
+  if (!cachedHero) {
+    cachedHero = document.getElementById("hero") || document.querySelector(".services-hero");
+    if (cachedHero) {
+      threshold = cachedHero.offsetHeight - 80;
+    }
   }
 
   if (scrollY > lastScrollY && scrollY > 100) {
@@ -175,12 +175,10 @@ function initScrollReveal() {
               wordEls,
               {
                 opacity: 0,
-                filter: "blur(10px)",
                 y: 20,
               },
               {
                 opacity: 1,
-                filter: "blur(0px)",
                 y: 0,
                 duration: 0.8,
                 stagger: 0.04,

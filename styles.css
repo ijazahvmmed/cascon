@@ -2909,6 +2909,14 @@ ol {
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.7;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .interior-hero-bg-teal .blob {
+    filter: blur(40px);
+    opacity: 0.5;
+  }
 }
 
 .interior-hero-bg-teal .blob-1 {
@@ -2956,4 +2964,14 @@ ol {
 @keyframes pulseTeal {
   0% { opacity: 0.5; }
   100% { opacity: 0.8; }
+}
+
+/* Character/Word Reveal Optimization */
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.fade-up {
+  will-change: transform, opacity;
 }
